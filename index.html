@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--orange:#ff4f1f;--orange-dark:#e84317;--black:#0b0b0b;--dark:#151515;--gray-900:#222;--gray-700:#555;--gray-500:#888;--gray-300:#d9d9d9;--gray-200:#e9e9e9;--gray-100:#f5f5f3;--white:#fff}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;background:#ddd;font-family:"Manrope",Arial,sans-serif;color:var(--black);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{padding:20px 0}.page{width:297mm;height:210mm;position:relative;overflow:hidden;background:var(--white);page-break-after:always}.page:last-child{page-break-after:auto}
+.eyebrow{display:flex;align-items:center;gap:9px;font-size:11.7px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gray-500)}.eyebrow::before{content:"";width:20px;height:2px;background:var(--orange)}
+.h2{font-size:44.2px;line-height:.98;font-weight:800;letter-spacing:-.045em}.orange{color:var(--orange)}.muted{color:var(--gray-500)}
+.p1{display:grid;grid-template-columns:55% 45%}.p1-left{position:relative;padding:42px 48px;background:var(--orange);color:var(--white);display:flex;flex-direction:column;justify-content:space-between}.p1-left::after{content:"01";position:absolute;right:34px;top:30px;font-size:100px;line-height:1;font-weight:800;letter-spacing:-.08em;color:rgba(255,255,255,.09)}
+.p1-top{display:flex;justify-content:space-between;align-items:center}.p1-label{font-size:11.7px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.72)}.p1-year{font-size:16.9px;font-weight:700;color:rgba(255,255,255,.55)}
+.p1-main{position:relative;z-index:2}.p1-kicker{font-size:14.3px;font-weight:700;margin-bottom:18px;color:rgba(255,255,255,.65)}.p1-h1{font-size:61px;line-height:1.02;font-weight:800;letter-spacing:-.065em}.p1-h1 span{display:block}.p1-h1 .dim{color:rgba(255,255,255,.28)}
+.p1-bottom{max-width:430px}.p1-tagline{font-size:15.6px;line-height:1.65;color:rgba(255,255,255,.72);max-width:330px}
+.p1-right{padding:42px 46px;display:flex;flex-direction:column;background:#fff}.p1-right>div:first-child{flex:1;display:flex;flex-direction:column;justify-content:center}.p1-right-head{display:flex;justify-content:space-between;align-items:flex-start}.p1-right-number{font-size:16.9px;font-weight:700;color:#bbb}.p1-pain-title{margin-top:32px;margin-bottom:26px;font-size:15.6px;line-height:1.3;font-weight:800;letter-spacing:.10em;text-transform:uppercase;color:#888}.p1-pain{display:flex;flex-direction:column;gap:23px}.p1-pain-item{display:grid;grid-template-columns:32px 1fr;gap:15px;align-items:start}.p1-pain-dash{width:27px;height:2px;background:var(--orange);margin-top:9px}.p1-pain-text{font-size:18.2px;line-height:1.55;color:#292929}
+.p1-stats{flex-shrink:0;border-top:1px solid #dedede;padding-top:20px;display:grid;grid-template-columns:repeat(3,1fr)}.p1-stat{padding-right:20px;border-right:1px solid #dedede}.p1-stat:not(:first-child){padding-left:20px}.p1-stat:last-child{border-right:0}.p1-stat-num{font-size:35.1px;line-height:1;font-weight:800;letter-spacing:-.05em;color:var(--orange)}.p1-stat-label{margin-top:6px;font-size:12px;line-height:1.35;text-transform:uppercase;letter-spacing:.07em;color:#999}
+.p2{padding:40px 48px 0;display:flex;flex-direction:column}.p2-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px}.p2-head-right{width:270px;font-size:16.9px;line-height:1.5;color:#999}.cases-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;flex:1}.case{position:relative;padding:0;border:1px solid #dedede;background:#fff;display:flex;flex-direction:column;overflow:hidden}.case::before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:var(--orange);transform:scaleX(0);transform-origin:left;z-index:2}.case:hover::before{transform:scaleX(1)}.case-header{position:relative;z-index:1;padding:20px 20px 0}.case-type{margin-bottom:9px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}.case-co{max-width:250px;font-size:16px;line-height:1.25;font-weight:800;letter-spacing:-.025em}.case-visual{flex:1;min-height:90px;margin-top:14px;margin-left:0;margin-right:0;margin-bottom:0;padding:0;background:#f1f1ef;overflow:hidden;display:block}.case-visual img{width:100%;height:100%;object-fit:cover;display:block}.case-bottom{padding:14px 20px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #e4e4e4;flex-shrink:0}.metric-value{font-size:27.3px;line-height:1;font-weight:800;letter-spacing:-.05em}.metric-label{margin-top:5px;font-size:12px;color:#999;text-transform:uppercase;letter-spacing:.08em}.seo-case{margin-top:12px;margin-left:-48px;margin-right:-48px;padding:15px 68px;background:var(--black);color:white;display:grid;grid-template-columns:1fr auto;align-items:center;gap:30px}.seo-type{margin-bottom:5px;font-size:12px;font-weight:800;color:var(--orange);text-transform:uppercase;letter-spacing:.13em}.seo-title{font-size:15.6px;font-weight:800}.seo-sub{margin-top:3px;font-size:12px;color:#888}.seo-metrics{display:flex;gap:32px}.seo-metric-value{font-size:27.3px;font-weight:800;letter-spacing:-.05em;color:var(--orange)}.seo-metric-label{margin-top:3px;font-size:12px;color:#777;text-transform:uppercase}
+.p3{display:grid;grid-template-columns:55% 45%}.p3-left{padding:42px 45px 42px 48px;display:flex;flex-direction:column}.p3-head{margin-bottom:25px}.price-items{flex:1;display:flex;flex-direction:column}.price-row{flex:1;min-height:0;display:grid;grid-template-columns:1fr 170px;gap:30px;align-items:center;border-top:1px solid #dedede}.price-row:last-child{border-bottom:0}.price-index{font-size:11.7px;font-weight:800;color:#bbb;margin-bottom:7px}.pr-name{font-size:23.4px;font-weight:800;letter-spacing:-.035em}.pr-desc{margin-top:5px;font-size:16.9px;color:#777}.pr-inc{margin-top:11px;max-width:470px;font-size:12px;line-height:1.55;color:#aaa}.pr-price{text-align:right}.pr-amount{font-size:31.2px;line-height:1;font-weight:800;letter-spacing:-.05em}.pr-from{margin-top:5px;font-size:12px;color:#aaa}
+.p3-right{position:relative;padding:42px 38px;background:var(--black);color:white;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}.p3-right::before{content:"03";position:absolute;right:20px;top:17px;font-size:95px;line-height:1;font-weight:800;letter-spacing:-.08em;color:rgba(255,255,255,.04)}.p3-right-content{position:relative;z-index:1}.p3-right-h{margin:13px 0 31px;font-size:37.7px;line-height:.98;font-weight:800;letter-spacing:-.055em}.promo-item{padding:15px 0;border-top:1px solid #292929}.promo-name{font-size:14.3px;font-weight:800}.promo-price{margin-top:4px;font-size:26px;line-height:1;font-weight:800;color:var(--orange);letter-spacing:-.04em}.promo-desc{margin-top:5px;font-size:12px;line-height:1.45;color:#777}.p3-note{position:relative;z-index:1;padding-top:15px;border-top:1px solid #292929;font-size:12px;line-height:1.55;color:#666}
+.p4{display:grid;grid-template-columns:55% 45%}.p4-left{padding:42px 48px;display:flex;flex-direction:column}.p4-head{margin-bottom:22px}.steps{flex:1;display:flex;flex-direction:column}.step{flex:1;display:grid;grid-template-columns:42px 1fr;gap:17px;align-items:center;border-top:1px solid #dedede}.step:last-child{border-bottom:1px solid #dedede}.step-n{font-size:11.7px;font-weight:800;color:var(--orange)}.step-title{font-size:16.9px;font-weight:800;letter-spacing:-.02em}.step-desc{max-width:430px;margin-top:4px;font-size:11.7px;line-height:1.5;color:#888}.guarantees{display:flex;gap:20px;margin-top:19px}.g-item{display:flex;align-items:center;gap:7px;font-size:12px;color:#555}.g-dot{width:5px;height:5px;flex-shrink:0;background:var(--orange);border-radius:50%}
+.p4-right{position:relative;padding:42px 48px;background:var(--orange);color:white;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}.p4-right::before{content:"04";position:absolute;right:25px;top:20px;font-size:110px;font-weight:800;letter-spacing:-.1em;color:rgba(255,255,255,.09)}.cta-top,.cta-contacts,.cta-bottom{position:relative;z-index:1}.cta-label{margin-bottom:25px;font-size:11.7px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.58)}.cta-big{font-size:55px;line-height:.9;font-weight:800;letter-spacing:-.065em}.cta-sub{max-width:350px;margin-top:19px;font-size:14.3px;line-height:1.6;color:rgba(255,255,255,.72)}.cta-contacts{display:flex;flex-direction:column;gap:11px}.cta-line{display:flex;align-items:center;gap:11px}.cta-icon{width:29px;height:29px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:rgba(255,255,255,.14);font-size:14.3px}.cta-val{font-size:15.6px;font-weight:700;color:#fff;text-decoration:none}.cta-val:hover{text-decoration:underline}.cta-bottom{padding-top:15px;border-top:1px solid rgba(255,255,255,.16);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38)}
+@media screen and (max-width:900px){body{padding:0}.page{width:100%;height:auto;min-height:100vh}.p1,.p3,.p4{display:block}.p1-left,.p1-right,.p3-left,.p3-right,.p4-left,.p4-right{min-height:100vh}.cases-row{grid-template-columns:1fr}.p2{min-height:auto}.price-row{min-height:180px}}
+@page{size:A4 landscape;margin:0}@media print{html,body{background:white;padding:0}.page{width:297mm;height:210mm}}
+</style>
+</head>
+<body>
+<div class="page p1">
+<section class="p1-left"><div class="p1-top"><div class="p1-label">Коммерческое предложение</div><div class="p1-year">2026</div></div><div class="p1-main"><div class="p1-kicker">Сайты · SEO · Яндекс.Директ</div><div class="p1-h1"><span>Сайт,</span><span>который</span><span>продаёт.</span><span class="dim">Не просто</span><span class="dim">существует.</span></div></div><div class="p1-bottom"><div class="p1-tagline">Разрабатываем сайты и сразу настраиваем трафик — SEO и Яндекс.Директ. Один подрядчик. Полный цикл.</div></div></section>
+<section class="p1-right"><div><div class="p1-right-head"><div class="eyebrow">Задача</div><div class="p1-right-number">01 / 04</div></div><div class="p1-pain-title">Почему большинство сайтов не работают</div><div class="p1-pain">
+<div class="p1-pain-item"><div class="p1-pain-dash"></div><div class="p1-pain-text">Сделали красиво — но заявок нет. Сайт не оптимизирован под поиск и не закрывает возражения.</div></div>
+<div class="p1-pain-item"><div class="p1-pain-dash"></div><div class="p1-pain-text">Агентство сделало сайт и исчезло. Реклама — уже другой подрядчик, другой бюджет, другая боль.</div></div>
+<div class="p1-pain-item"><div class="p1-pain-dash"></div><div class="p1-pain-text">Прошлый разработчик взял деньги, пропал на 3 месяца и сдал то, что стыдно показывать.</div></div>
+<div class="p1-pain-item"><div class="p1-pain-dash"></div><div class="p1-pain-text">Чужой шаблон не отличает вас от десятков конкурентов в поисковой выдаче.</div></div>
+</div></div>
+<div class="p1-stats"><div class="p1-stat"><div class="p1-stat-num">47+</div><div class="p1-stat-label">проектов<br>сдано</div></div><div class="p1-stat"><div class="p1-stat-num">×3.2</div><div class="p1-stat-label">средний рост<br>заявок</div></div><div class="p1-stat"><div class="p1-stat-num">14 дн</div><div class="p1-stat-label">средний срок<br>лендинга</div></div></div></section>
+</div>
+<div class="page p2"><div class="p2-head"><div><div class="eyebrow">Кейсы</div><div class="h2" style="margin-top:9px;">Цифры говорят<br>громче обещаний.</div></div><div class="p2-head-right">Примеры проектов и результатов. Показатели приведены за период работы над соответствующими проектами.</div></div>
+<div class="cases-row">
+
+<div class="case">
+  <div class="case-header">
+    <div class="case-type">Стоматология</div>
+    <div class="case-co">Новый век</div>
+  </div>
+
+  <div class="case-visual">
+    <img src="1.png" alt="Новый век">
+  </div>
+
+  <div class="case-bottom">
+    <div>
+      <div class="metric-value">×3.8</div>
+      <div class="metric-label">заявок / мес</div>
+    </div>
+    <div>
+      <div class="metric-value">14</div>
+      <div class="metric-label">дней</div>
+    </div>
+    <div>
+      <div class="metric-value">60к</div>
+      <div class="metric-label">бюджет</div>
+    </div>
+  </div>
+</div>
+
+<div class="case">
+  <div class="case-header">
+    <div class="case-type">Строительство</div>
+    <div class="case-co">Реконструкция-плюс</div>
+  </div>
+
+  <div class="case-visual">
+    <img src="2.png" alt="Реконструкция-плюс">
+  </div>
+
+  <div class="case-bottom">
+    <div>
+      <div class="metric-value">×2.6</div>
+      <div class="metric-label">заявок / мес</div>
+    </div>
+    <div>
+      <div class="metric-value">21</div>
+      <div class="metric-label">день</div>
+    </div>
+    <div>
+      <div class="metric-value">75к</div>
+      <div class="metric-label">бюджет</div>
+    </div>
+  </div>
+</div>
+
+<div class="case">
+  <div class="case-header">
+    <div class="case-type">Бренд одежды</div>
+    <div class="case-co">Тати</div>
+  </div>
+
+  <div class="case-visual">
+    <img src="3.png" alt="Тати">
+  </div>
+
+  <div class="case-bottom">
+    <div>
+      <div class="metric-value">×2.1</div>
+      <div class="metric-label">выручки</div>
+    </div>
+    <div>
+      <div class="metric-value">18</div>
+      <div class="metric-label">дней</div>
+    </div>
+    <div>
+      <div class="metric-value">65к</div>
+      <div class="metric-label">бюджет</div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+<div class="seo-case"><div><div class="seo-type">Юридические услуги</div><div class="seo-title">Марк Кулезин</div><div class="seo-sub">Сайт · SEO · Яндекс.Директ · комплексное продвижение</div></div><div class="seo-metrics"><div><div class="seo-metric-value">×3.4</div><div class="seo-metric-label">заявок</div></div><div><div class="seo-metric-value">−64%</div><div class="seo-metric-label">продвижения</div></div><div><div class="seo-metric-value">6 мес</div><div class="seo-metric-label">цена лида</div></div></div></div>
+</div>
+<div class="page p3"><section class="p3-left"><div class="p3-head"><div class="eyebrow">Стоимость</div><div class="h2" style="margin-top:9px;">Прайс-лист</div></div><div class="price-items">
+<div class="price-row"><div><div class="price-index">01</div><div class="pr-name">Лендинг</div><div class="pr-desc">Одностраничный продающий сайт</div><div class="pr-inc">Дизайн · Адаптив · Форма заявки · Базовое SEO · Срок 10–14 дней</div></div><div class="pr-price"><div class="pr-amount">50 000 ₽</div><div class="pr-from">фиксированно</div></div></div>
+<div class="price-row"><div><div class="price-index">02</div><div class="pr-name">Многостраничный сайт</div><div class="pr-desc">Корпоративный, каталог, портфолио</div><div class="pr-inc">До 15 страниц · Блог / Новости · SEO-структура · Срок 21–28 дней</div></div><div class="pr-price"><div class="pr-amount">от 70 000 ₽</div><div class="pr-from">под ключ</div></div></div>
+<div class="price-row"><div><div class="price-index">03</div><div class="pr-name">Интернет-магазин</div><div class="pr-desc">Каталог, корзина, онлайн-оплата</div><div class="pr-inc">Фильтры · Личный кабинет · Интеграция со складом · Срок 21–30 дней</div></div><div class="pr-price"><div class="pr-amount">от 80 000 ₽</div><div class="pr-from">под ключ</div></div></div>
+</div></section>
+<aside class="p3-right"><div class="p3-right-content"><div class="eyebrow" style="color:#777;">Продвижение</div><div class="p3-right-h">Трафик<br>и реклама</div>
+<div class="promo-item"><div class="promo-name">SEO-продвижение</div><div class="promo-price">25 000 ₽</div><div class="promo-desc">в месяц · рост трафика из поиска за 2–4 мес</div></div>
+<div class="promo-item"><div class="promo-name">Яндекс.Директ</div><div class="promo-price">25 000 ₽</div><div class="promo-desc">в месяц · настройка + ведение · запуск рекламных кампаний</div></div>
+<div class="promo-item"><div class="promo-name">SEO + Директ</div><div class="promo-price">40 000 ₽</div><div class="promo-desc">в месяц · комплексное продвижение</div></div></div>
+<div class="p3-note">Оплата: 50% на старте — 50% при сдаче.<br>Договор, закрывающие документы.<br>Работаем с ИП и юрлицами.</div></aside>
+</div>
+<div class="page p4"><section class="p4-left"><div class="p4-head"><div class="eyebrow">Процесс</div><div class="h2" style="margin-top:9px;">Как работаем</div></div><div class="steps">
+<div class="step"><div class="step-n">01</div><div><div class="step-title">Созвон и бриф</div><div class="step-desc">30 минут — разбираем задачу, аудиторию, конкурентов. Даём ТЗ и смету.</div></div></div>
+<div class="step"><div class="step-n">02</div><div><div class="step-title">Прототип и дизайн</div><div class="step-desc">Показываем структуру и внешний вид до начала вёрстки. Правки — без ограничений.</div></div></div>
+<div class="step"><div class="step-n">03</div><div><div class="step-title">Разработка</div><div class="step-desc">Вёрстка, программирование, проверка на устройствах и браузерах.</div></div></div>
+<div class="step"><div class="step-n">04</div><div><div class="step-title">Запуск и аналитика</div><div class="step-desc">Размещаем, подключаем Метрику, настраиваем цели и сдаём проект с документами.</div></div></div>
+<div class="step"><div class="step-n">05</div><div><div class="step-title">Реклама и рост</div><div class="step-desc">Запускаем SEO / Директ, ежемесячный отчёт и оптимизацию по результатам.</div></div></div>
+</div><div class="guarantees"><div class="g-item"><div class="g-dot"></div>Фиксированная цена</div><div class="g-item"><div class="g-dot"></div>Сроки в договоре</div><div class="g-item"><div class="g-dot"></div>3 месяца поддержки</div></div></section>
+<section class="p4-right"><div class="cta-top"><div class="cta-label">Следующий шаг</div><div class="cta-big">Обсудим<br>ваш<br>проект?</div><div class="cta-sub">Ответим в течение 2 часов. Расскажем, что и за сколько — конкретно, без воды.</div></div>
+<div class="cta-contacts"><div class="cta-line"><div class="cta-icon">☎</div><a class="cta-val" href="tel:+79134626225">+7 913 462-62-25</a></div><div class="cta-line"><div class="cta-icon">@</div><a class="cta-val" href="mailto:egorilinykh10@gmail.com">egorilinykh10@gmail.com</a></div><div class="cta-line"><div class="cta-icon">↗</div><a class="cta-val" href="https://t.me/ilinykhegor" target="_blank" rel="noopener noreferrer">Telegram: @ilinykhegor</a></div><div class="cta-line"><div class="cta-icon">M</div><a class="cta-val" href="https://max.ru/u/f9LHodD0cOKz7y96m5YKTR_m1my8FpIBa5r3PjZi32qHbbTdJA7h2LebtC8" target="_blank" rel="noopener noreferrer">MAX: @ilinykhegor</a></div></div>
+<div class="cta-bottom">Конфиденциально · Коммерческое предложение · 2026</div></section></div>
+</body>
+</html>
